@@ -1,6 +1,4 @@
 import pysmile
-from pip._internal.utils.misc import tabulate
-
 import pysmile_license
 import random
 
