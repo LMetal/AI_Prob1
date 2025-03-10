@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Ricerca">
+			<state id="Si" />
+			<state id="No" />
+		</decision>
+		<cpt id="Mercato">
+			<state id="Alto" />
+			<state id="Basso" />
+			<probabilities>0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="Stima_mercato">
+			<state id="Alta" />
+			<state id="Bassa" />
+			<state id="No_data" />
+			<parents>Ricerca Mercato</parents>
+			<probabilities>0.9 0.1 0 0.1 0.9 0 0 0 1 0 0 1</probabilities>
+		</cpt>
+		<utility id="C1">
+			<parents>Ricerca</parents>
+			<utilities>-1000 0</utilities>
+		</utility>
+		<decision id="Sviluppa_prototipo">
+			<state id="Si" />
+			<state id="No" />
+			<parents>Stima_mercato</parents>
+		</decision>
+		<cpt id="Qualità_finale">
+			<state id="Alta" />
+			<state id="Normale" />
+			<parents>Sviluppa_prototipo</parents>
+			<probabilities>0.85 0.15 0 1</probabilities>
+		</cpt>
+		<decision id="Procedere_con_produzione">
+			<state id="Si" />
+			<state id="No" />
+			<parents>Qualità_finale</parents>
+		</decision>
+		<cpt id="Probabilità_di_profitto">
+			<state id="Alto" />
+			<state id="Basso" />
+			<state id="Nessuno" />
+			<parents>Qualità_finale Stima_mercato</parents>
+			<probabilities>0.95 0.05 0 0.5 0.3 0.2 0.725 0.175 0.1 0.4 0.3 0.3 0.1 0.3 0.6 0.25 0.3 0.45</probabilities>
+		</cpt>
+		<utility id="C2">
+			<parents>Sviluppa_prototipo</parents>
+			<utilities>-5000 0</utilities>
+		</utility>
+		<utility id="Utilità_vendita">
+			<parents>Probabilità_di_profitto Procedere_con_produzione</parents>
+			<utilities>50000 0 10000 0 0 0</utilities>
+		</utility>
+		<utility id="C3">
+			<parents>Procedere_con_produzione</parents>
+			<utilities>-2500 0</utilities>
+		</utility>
+		<mau id="Utilità_finale">
+			<parents>C1 C2 Utilità_vendita C3</parents>
+			<weights>1 1 1 1</weights>
+		</mau>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Network1">
+			<node id="Ricerca">
+				<name>Effettua ricerche di mercato</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>85 116 169 166</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<textbox>
+				<caption>Un industria manifatturiera deve decidere se andare avanti con la produzione di un nuovo\nprodotto o fermarla. I profitti futuri dipendono dalla qualita’ del prodotto (standard o alta)\ne dalla domanda di mercato (bassa o alta). L’industria puo’, prima di decidere sulla\nproduzione, effettuare due altre azioni: migliorare la qualita’ del prodotto sviluppando un\nprototipo, oppure effettuare ricerche di marketing approfondite per capire la domanda di\nmercato. Puo’ effettuare anche entrambe le cose (nel qual caso prima effettua la ricerca di\nmarketing). Entrambe queste azioni costano, in particolare le ricerche di mercato $1000 e\nlo sviluppo del prototipo di qualita’ $5000. Le ricerche di mercato sono affidabili al 90%,\nmentre lo sviluppo del prototipo ha una probabilita’ di aumentare la qualita’ dell’85%.\nLe probabilita’ di profitto (nessuno, basso, alto) sono stimate dall’azienda (introdurle nel\nmodello a piacere, ma con valori sensati; es: la prob. di un profitto alto deve essere piu’\nalta se la domanda di mercato e’ alta e la qualita’ del prodotto e’ alta, rispetto ad una\nsituazione in cui c’e’ prodotto scadente e bassa domanda).\nIl costo della produzione e’ stimato in $2500, il profitto basso in $10000 ed il profitto alto\nin $50000.\nL’industria non ha conoscenza sull’attuale domanda di mercato.\nModellare un processo decisionale in cui, sulla base dei dati in input, l’azienda scelga la\nsequenza di azioni migliori.</caption>
+				<font color="000000" name="Arial" size="8" />
+				<position>780 45 1215 297</position>
+			</textbox>
+			<node id="Stima_mercato">
+				<name>Stima mercato</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>235 155 346 223</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="C1">
+				<name>Costo Ricerca</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>97 289 179 323</position>
+				<barchart active="true" />
+			</node>
+			<node id="Qualità_finale">
+				<name>Qualità finale</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>435 182 550 241</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Sviluppa_prototipo">
+				<name>Sviluppa prototipo</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>405 86 522 138</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Utilità_finale">
+				<name>Utilità finale</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>339 485 424 556</position>
+				<barchart active="true" width="176" height="101" />
+			</node>
+			<node id="C2">
+				<name>Costo Sviluppo Prototipo</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>279 354 383 404</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Probabilità_di_profitto">
+				<name>Probabilità di profitto</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>420 270 526 336</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Procedere_con_produzione">
+				<name>Procedere con produzione</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>621 186 749 246</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="C3">
+				<name>Costo Produzione</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>597 401 700 433</position>
+				<barchart active="true" />
+			</node>
+			<node id="Utilità_vendita">
+				<name>Utilità vendita</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>425 377 508 409</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Mercato">
+				<name>Mercato</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>263 273 322 309</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
