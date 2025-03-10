@@ -1,17 +1,5 @@
 import pysmile
 import pysmile_license
-import random
-
-
-def init_by_definition(node):
-    values = list(range(len(net.get_node_definition(node))))  # Lista degli indici
-    probabilities = net.get_node_definition(node)  # Probabilità associate
-
-    r = random.choices(values, weights=probabilities, k=1)  # Campionamento pesato
-    net.set_evidence(node, r[0])
-    print(node, " campiono ", net.get_evidence_id(node))
-
-    net.update_beliefs()
 
 
 def set_evidence(node):
