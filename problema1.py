@@ -26,6 +26,8 @@ def set_evidence(node):
         print("N\tState")
         print("--------------------")
         for n, state, prob in zip(values, state_names, probabilities):
+            if prob == 0:
+                continue
             print(f"{n}\t{state}") #print(f"{n}\t{state}\t\t{prob:.2f}")
         n = int(input("Quale N? : "))
         net.set_evidence(node, n)
@@ -51,12 +53,9 @@ def take_choice(node):
 
 
 def problema1():
-    net.read_file("Problema1.xdsl");
+    net.read_file("Problema1.xdsl")
     net.clear_all_evidence()
     net.update_beliefs()
-
-    # random mercato
-    # init_by_definition("Mercato")
 
     take_choice("Ricerca")
 
@@ -66,11 +65,10 @@ def problema1():
 
     set_evidence("Qualità_finale")
 
-    #set_evidence("Probabilità_di_profitto")  # ???
-
     take_choice("Procedere_con_produzione")
 
-    print("Utilità totale: " + str(net.get_node_value("Utilità_finale")[0]))
+    utility = net.get_node_value("Utilità_finale")[0]
+    print(f"\n\nUtilità finale: {utility: .2f}")
 
 
 if __name__ == "__main__":
