@@ -69,20 +69,20 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>85 116 169 166</position>
+				<position>59 171 143 221</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<textbox>
 				<caption>Un industria manifatturiera deve decidere se andare avanti con la produzione di un nuovo\nprodotto o fermarla. I profitti futuri dipendono dalla qualita’ del prodotto (standard o alta)\ne dalla domanda di mercato (bassa o alta). L’industria puo’, prima di decidere sulla\nproduzione, effettuare due altre azioni: migliorare la qualita’ del prodotto sviluppando un\nprototipo, oppure effettuare ricerche di marketing approfondite per capire la domanda di\nmercato. Puo’ effettuare anche entrambe le cose (nel qual caso prima effettua la ricerca di\nmarketing). Entrambe queste azioni costano, in particolare le ricerche di mercato $1000 e\nlo sviluppo del prototipo di qualita’ $5000. Le ricerche di mercato sono affidabili al 90%,\nmentre lo sviluppo del prototipo ha una probabilita’ di aumentare la qualita’ dell’85%.\nLe probabilita’ di profitto (nessuno, basso, alto) sono stimate dall’azienda (introdurle nel\nmodello a piacere, ma con valori sensati; es: la prob. di un profitto alto deve essere piu’\nalta se la domanda di mercato e’ alta e la qualita’ del prodotto e’ alta, rispetto ad una\nsituazione in cui c’e’ prodotto scadente e bassa domanda).\nIl costo della produzione e’ stimato in $2500, il profitto basso in $10000 ed il profitto alto\nin $50000.\nL’industria non ha conoscenza sull’attuale domanda di mercato.\nModellare un processo decisionale in cui, sulla base dei dati in input, l’azienda scelga la\nsequenza di azioni migliori.</caption>
 				<font color="000000" name="Arial" size="8" />
-				<position>780 45 1215 297</position>
+				<position>1013 106 1448 358</position>
 			</textbox>
 			<node id="Stima_mercato">
 				<name>Stima mercato</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>235 155 346 223</position>
+				<position>222 165 333 233</position>
 				<barchart active="true" width="128" height="72" />
 			</node>
 			<node id="C1">
@@ -90,15 +90,15 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>97 289 179 323</position>
-				<barchart active="true" />
+				<position>61 393 143 427</position>
+				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Qualità_finale">
 				<name>Qualità finale</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>435 182 550 241</position>
+				<position>590 164 705 223</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Sviluppa_prototipo">
@@ -106,7 +106,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>405 86 522 138</position>
+				<position>403 167 520 219</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Utilità_finale">
@@ -114,7 +114,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>339 485 424 556</position>
+				<position>359 537 444 608</position>
 				<barchart active="true" width="176" height="101" />
 			</node>
 			<node id="C2">
@@ -122,7 +122,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>279 354 383 404</position>
+				<position>253 389 357 439</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Probabilità_di_profitto">
@@ -130,7 +130,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>420 270 526 336</position>
+				<position>416 277 522 343</position>
 				<barchart active="true" width="128" height="72" />
 			</node>
 			<node id="Procedere_con_produzione">
@@ -138,7 +138,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>621 186 749 246</position>
+				<position>777 165 905 225</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="C3">
@@ -146,15 +146,15 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>597 401 700 433</position>
-				<barchart active="true" />
+				<position>793 396 896 428</position>
+				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Utilità_vendita">
 				<name>Utilità vendita</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>425 377 508 409</position>
+				<position>501 400 584 432</position>
 				<barchart active="true" width="128" height="72" />
 			</node>
 			<node id="Mercato">
@@ -162,9 +162,14 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>263 273 322 309</position>
+				<position>251 81 310 117</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
+			<textbox>
+				<caption>prob profitto no_data -&gt; media</caption>
+				<font color="000000" name="Arial" size="8" />
+				<position>1028 472 1173 486</position>
+			</textbox>
 		</genie>
 	</extensions>
 </smile>
