@@ -33,14 +33,19 @@ def take_choice(node):
     print(f"si\t\t:\t{value[0]:.2f}")
     print(f"no\t\t:\t{value[1]:.2f}")
 
+    scelte = ["si", "no"]
+    scelta_consigliata = scelte[value.index(max(value))]
+    print(f"AZIONE CONSIGLIATA : {scelta_consigliata} [{max(value):.2f}]")
+
     if input("Scelta: ") == "si":
         net.set_evidence(node, "Si")
     else:
         net.set_evidence(node, "No")
+
     net.update_beliefs()
 
 
-def problema1():
+def main():
     net.read_file("Problema1.xdsl")
     net.clear_all_evidence()
     net.update_beliefs()
@@ -61,4 +66,4 @@ def problema1():
 
 if __name__ == "__main__":
     net = pysmile.Network()
-    problema1()
+    main()
