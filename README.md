@@ -1,17 +1,48 @@
-Un industria manifatturiera deve decidere se andare avanti con la produzione di un nuovo prodotto o fermarla. 
+# Decisione sulla Produzione con Rete Bayesiana
 
-I profitti futuri dipendono dalla qualita’ del prodotto (standard o alta) e dalla domanda di mercato (bassa o alta). L’industria puo’, prima di decidere sulla produzione,
-effettuare due altre azioni: migliorare la qualita’ del prodotto sviluppando un prototipo, oppure effettuare ricerche di marketing approfondite per capire la domanda di mercato.
+## 📌 Descrizione
+Questo progetto modella un processo decisionale per un’industria manifatturiera che deve stabilire se **andare avanti con la produzione di un nuovo prodotto** o fermarla.  
 
-Puo’ effettuare anche entrambe le cose (nel qual caso prima effettua la ricerca dimarketing). Entrambe queste azioni costano,
-in particolare le ricerche di mercato $1000 e lo sviluppo del prototipo di qualita’ $5000. 
+Le decisioni sono influenzate da due fattori principali:
+- **Qualità del prodotto**: può essere *standard* o *alta*
+- **Domanda di mercato**: può essere *bassa* o *alta*
 
-Le ricerche di mercato sono affidabili al 90%,mentre lo sviluppo del prototipo ha una probabilita’ di aumentare la qualita’ dell’85%.
+Prima di decidere sulla produzione, l’azienda può effettuare due azioni opzionali:
+1. **Ricerche di marketing** (costo: **$1000**) – accurate al 90% nell’indicare la domanda di mercato.  
+2. **Sviluppo di un prototipo** (costo: **$5000**) – aumenta la probabilità di ottenere alta qualità con una confidenza dell’85%.  
 
-Le probabilita’ di profitto (nessuno, basso, alto) sono stimate dall’azienda (introdurle nelmodello a piacere, ma con valori sensati; es: la prob. di un profitto alto
-deve essere piu’ alta se la domanda di mercato e’ alta e la qualita’ del prodotto e’ alta, rispetto ad una situazione in cui c’e’ prodotto scadente e bassa domanda).
+L’azienda può anche scegliere di effettuare entrambe le azioni, nell’ordine:  
+**prima ricerca di mercato → poi prototipo**.  
 
-Il costo della produzione e’ stimato in $2500, il profitto basso in $10000 ed il profitto alto in $50000.
+Il modello viene implementato tramite una **rete bayesiana** che stima la probabilità dei diversi scenari e guida l’azienda verso la **sequenza di azioni ottimale** per massimizzare l’**utile atteso**.  
 
-L’industria non ha conoscenza sull’attuale domanda di mercato.
-Modellare un processo decisionale in cui, sulla base dei dati in input, l’azienda scelga la sequenza di azioni migliori.
+---
+
+## 📊 Specifiche del Modello
+- **Costi**
+  - Produzione: **$2500**  
+  - Ricerca di mercato: **$1000**  
+  - Prototipo: **$5000**  
+
+- **Profitti**
+  - Nessuno: **$0**  
+  - Basso: **$10000**  
+  - Alto: **$50000**  
+
+- **Vincoli probabilistici**
+  - Accuratezza ricerche di mercato: **90%**  
+  - Probabilità di miglioramento qualità tramite prototipo: **85%**  
+  - Probabilità di profitto: dipendono da qualità × domanda, con valori ragionevoli.  
+    - **Qualità alta + domanda alta → più probabile profitto alto**  
+    - **Qualità bassa + domanda bassa → più probabile nessun profitto**  
+
+---
+
+## ⚙️ Funzionalità
+- Modellazione del problema con una **rete bayesiana**.  
+- Calcolo delle **probabilità condizionate** di profitto in base alle scelte fatte.  
+- Stima dell’**utile atteso** per ciascuna strategia (produzione diretta, ricerca, prototipo, entrambe).  
+- Identificazione della **decisione ottimale**.  
+
+---
+
